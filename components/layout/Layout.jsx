@@ -1,8 +1,10 @@
 import Head from "next/head";
 import Header from "./Header";
 import Footer from "./Footer";
-import { ChakraProvider } from "@chakra-ui/react";
+import { Box, ChakraProvider } from "@chakra-ui/react";
 import ScrollToTop from "react-scroll-to-top";
+import NextNProgress from "nextjs-progressbar";
+import { motion } from "framer-motion";
 
 const Layout = ({ children }) => {
   return (
@@ -25,9 +27,22 @@ const Layout = ({ children }) => {
         color="#fff"
         style={{ backgroundColor: "#DA0037" }}
       />
+      <NextNProgress color="#DA0037" height={5} />
       <ChakraProvider>
+        <Box maxW="100vw" overflowX="hidden">
+          <motion.div
+            initial={{ opacity: 0, x: 400 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -400 }}
+            transition={{
+              duration: 0.5,
+            }}
+          >
+            <main role="main">{children}</main>
+            {/* {children} */}
+          </motion.div>
+        </Box>
         <Header />
-        <main role="main">{children}</main>
         <Footer />
       </ChakraProvider>
     </>

@@ -4,7 +4,7 @@ import Item from "./Item";
 function AvailableItems({ products }) {
   return (
     <div className="avalible-items">
-      <Container maxW={1400} my={32}>
+      <Container maxW={1400} my={16}>
         <Heading textAlign="center" mb={16} textTransform="uppercase">
           Available <span className="text-primary">ITEMS</span>
         </Heading>
