@@ -15,7 +15,7 @@ import Back from "./Back";
 
 function PInfo({ product }) {
   return (
-    <Container my={8} maxW={1200}>
+    <Container my={8} maxW={1200} as="article">
       <Back to="/" text="Home" />
 
       <Grid my={8} gridTemplateColumns={{ base: "1fr", md: "1fr 2fr" }} gap={4}>
@@ -25,8 +25,8 @@ function PInfo({ product }) {
 
         <GridItem>
           <Stack px={{ base: 2, md: 8 }} gap={3}>
-            <Heading>{product.title}</Heading>
-            <Text>{product.description}</Text>
+            <Heading as="h2">{product.title}</Heading>
+            <Text as="p">{product.description}</Text>
             <Box>
               <Text
                 as="small"
