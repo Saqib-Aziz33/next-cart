@@ -1,3 +1,5 @@
+import HomeContact from "../../components/elements/HomeContact";
+import PInfo from "../../components/elements/PInfo";
 import ProductHero from "../../components/elements/ProductHero";
 
 export async function getServerSideProps(context) {
@@ -13,8 +15,10 @@ export async function getServerSideProps(context) {
 
 export default function ProductPage({ product }) {
   return (
-    <>
+    <div className="product-page">
       <ProductHero product={product} />
-    </>
+      <PInfo product={product} />
+      <HomeContact />
+    </div>
   );
 }

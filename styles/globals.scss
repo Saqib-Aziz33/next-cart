@@ -83,6 +83,7 @@ h1,h2,h3,h4,h5,h6{
   padding: 100px 0;
   position: relative;
   clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 80%);
+  margin: 8rem 0;
 
   .h-overlay{
     position: absolute;
@@ -99,7 +100,7 @@ h1,h2,h3,h4,h5,h6{
   justify-content: center;
   align-items: center;
   background-size: contain;
-  // background-repeat: no-repeat;
+  flex-direction: column;
   position: relative;
   background-position: center;
 
@@ -144,13 +145,26 @@ h1,h2,h3,h4,h5,h6{
   }
 }
 
-
 .scroll-to-top{
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50% !important;
 }
+
+.react__star__rating__lite__stars{
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+
+.product-page{
+  .home-contact{
+    clip-path: unset;
+  }
+}
+
 
 
 
