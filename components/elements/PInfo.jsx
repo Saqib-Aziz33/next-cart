@@ -13,8 +13,11 @@ import {
 import { BsCartPlus } from "react-icons/bs";
 import Back from "./Back";
 import { motion } from "framer-motion";
+import useCart from "../../hooks/useCart";
 
 function PInfo({ product }) {
+  const { dispatch } = useCart();
+
   return (
     <Container my={8} maxW={1200} as="article">
       <Back to="/products" text="Home" />
@@ -55,7 +58,13 @@ function PInfo({ product }) {
               </Heading>
 
               <HStack justify="space-between">
-                <Button className="btn-primary" leftIcon={<BsCartPlus />}>
+                <Button
+                  className="btn-primary"
+                  leftIcon={<BsCartPlus />}
+                  onClick={() =>
+                    dispatch({ type: "ADD_ITEM", payload: product })
+                  }
+                >
                   Add to cart
                 </Button>
                 <Text color="green.400">IN STOCK</Text>

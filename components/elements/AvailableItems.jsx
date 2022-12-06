@@ -3,7 +3,7 @@ import Item from "./Item";
 
 function AvailableItems({ products }) {
   return (
-    <div className="avalible-items">
+    <div className="avalible-items" id="items">
       <Container maxW={1400} my={16}>
         <Heading textAlign="center" mb={16} textTransform="uppercase">
           Available <span className="text-primary">ITEMS</span>

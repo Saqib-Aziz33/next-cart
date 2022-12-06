@@ -2,8 +2,15 @@ import { Image, Stack, Text, Button, Heading, Box } from "@chakra-ui/react";
 import { BsCartPlus } from "react-icons/bs";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import useCart from "../../hooks/useCart";
 
 function Item({ item }) {
+  const { dispatch } = useCart();
+
+  function addToCart(obj) {
+    dispatch({ type: "ADD_ITEM", payload: obj });
+  }
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 100 }}
@@ -34,7 +41,13 @@ function Item({ item }) {
           </Link>
 
           <Stack pt={4}>
-            <Button className="btn-primary" leftIcon={<BsCartPlus />}>
+            <Button
+              className="btn-primary"
+              leftIcon={<BsCartPlus />}
+              onClick={() => {
+                addToCart(item);
+              }}
+            >
               Add to cart
             </Button>
           </Stack>

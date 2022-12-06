@@ -7,6 +7,7 @@ const nextConfig = {
       "cdn.pixabay.com",
       "images.pexel.com",
       "source.unsplash.com",
+      "fakestoreapi.com",
     ],
   },
 };

@@ -12,8 +12,11 @@ import {
 } from "@chakra-ui/react";
 import { useRef } from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import CartItem from "./CartItem";
+import useCart from "../../hooks/useCart";
 
 export default function Cart() {
+  const { items, total } = useCart();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef();
 
@@ -39,11 +42,17 @@ export default function Cart() {
           <DrawerCloseButton />
           <DrawerHeader>Selected items</DrawerHeader>
 
-          <DrawerBody></DrawerBody>
+          <DrawerBody>
+            {items.length === 0 ? (
+              <Heading size="md">No Items in cart</Heading>
+            ) : (
+              items.map((item) => <CartItem item={item} key={item.id} />)
+            )}
+          </DrawerBody>
 
           <DrawerFooter justifyContent="space-between">
             <Heading size="md">Total:</Heading>
-            <Heading size="md">$50.00</Heading>
+            <Heading size="md">${total}</Heading>
           </DrawerFooter>
         </DrawerContent>
       </Drawer>

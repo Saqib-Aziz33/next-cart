@@ -7,6 +7,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { useEffect, useRef } from "react";
 
 function Hero() {
@@ -45,8 +46,12 @@ function Hero() {
               beatae dicta voluptas harum?
             </Text>
             <HStack mt={6}>
-              <Button className="btn-primary">Order now</Button>
-              <Button variant="">Items</Button>
+              <Link href="/products">
+                <Button className="btn-primary">Products</Button>
+              </Link>
+              <Button as="a" href="#items" variant="">
+                Items
+              </Button>
             </HStack>
           </Box>
         </motion.div>

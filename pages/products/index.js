@@ -13,11 +13,13 @@ export async function getServerSideProps() {
 
 export default function ProductPage({ products }) {
   return (
-    <Container maxW={1200}>
-      <Box mt={40}>
-        <Back to="/" text="Home" />
-      </Box>
-      <AvailableItems products={products} />
-    </Container>
+    <>
+      <Container maxW={1200} overflowY="hidden">
+        <Box mt={40}>
+          <Back to="/" text="Home" />
+        </Box>
+        <AvailableItems products={products} />
+      </Container>
+    </>
   );
 }

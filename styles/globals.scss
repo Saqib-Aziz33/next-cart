@@ -93,6 +93,30 @@ h1,h2,h3,h4,h5,h6{
 }
 
 
+.cart-item{
+  background-color: #00000041;
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+  margin: 1rem 0;
+
+  img{
+    border-radius: 8px;
+  }
+
+  .del{
+    position: absolute;
+    bottom: 4px;right: 4px;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 4px;
+    &:hover{
+      background-color: rgba(255, 255, 255, 0.274);
+    }
+  }
+}
+
+
 
 .product-hero{
   min-height: 500px;
